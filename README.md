@@ -10,7 +10,7 @@ This project focuses on processing and analyzing healthcare-related data using P
 
 1. **`preprocessingCode.py`**
    - **Purpose**: Processes raw datasets from multiple years into a cleaned and unified format.
-   - **Key Features**:
+   - **Features**:
      - Combines multiple datasets.
      - Maps raw codes (e.g., gender, employment status) to human-readable labels.
      - Filters for relevant data (ages 18-64) and removes invalid values.
@@ -18,7 +18,7 @@ This project focuses on processing and analyzing healthcare-related data using P
 
 2. **`mapping.py`**
    - **Purpose**: Contains dictionaries to map coded values to descriptive labels.
-   - **Key Features**:
+   - **Features**:
      - Maps columns such as gender, health status, region, and more.
      - Example mappings:
        - `1 → "Male", 2 → "Female"` (Gender)
@@ -27,13 +27,13 @@ This project focuses on processing and analyzing healthcare-related data using P
 
 3. **`dataViz.ipynb`**
    - **Purpose**: Jupyter Notebook for visualizing the processed data.
-   - **Key Features**:
+   - **Features**:
      - Generates plots to explore healthcare expenditures, regional trends, and demographic distributions.
      - Supports hypothesis testing using statistical methods.
 
 4. **`visualizationAndHypothesisCode.ipynb`**
    - **Purpose**: Combines visualization and hypothesis testing for data insights.
-   - **Key Features**:
+   - **Features**:
      - Includes detailed visualizations for exploring data relationships.
      - Tests hypotheses such as differences in healthcare expenditures by region or vaccination status.
      - 
