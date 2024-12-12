@@ -49,10 +49,11 @@ This project focuses on processing and analyzing healthcare-related data using P
   - `seaborn`
   - `scipy`
 
-### Setup
+## Setup
+
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/meghnanag2/HealthInsuranceAnalysis.git
    ```
 2. Install required Python packages:
    ```bash
