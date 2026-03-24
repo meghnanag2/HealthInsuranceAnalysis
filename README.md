@@ -1,80 +1,93 @@
 # Health Insurance and Socioeconomic Data Analysis
 
 
+
 ## Overview
 
-This project analyzes large-scale healthcare data to understand how socioeconomic and demographic factors influence healthcare utilization, costs, and outcomes. Using multi-year data from the Medical Expenditure Panel Survey (MEPS), the goal is to uncover meaningful patterns that explain differences in healthcare access and expenditure across populations.
+This project analyzes large-scale healthcare data to understand how socioeconomic and demographic factors influence healthcare utilization, costs, and outcomes. Using multi-year data from the Medical Expenditure Panel Survey (MEPS), the objective is to uncover patterns that explain disparities in healthcare access and expenditure across different population groups.
 
-Rather than focusing only on data processing, the project is structured around answering a central question:
+Rather than focusing solely on data processing, the project is structured around a central analytical question:
 
 **How do income levels, age, gender, and insurance coverage impact healthcare costs and health outcomes?**
 
-The work combines multi-year data integration, structured preprocessing, categorical mapping, and exploratory analysis to build a clean and interpretable dataset for analysis.
+To answer this, the work combines multi-year data integration, structured preprocessing, categorical mapping, and exploratory analysis to build a clean and interpretable dataset for downstream analysis.
 
 
 
 ## Data
 
-The analysis is based on MEPS datasets spanning multiple years, including 2018 through 2022. These datasets contain detailed individual-level information across several dimensions:
+<p align="left">
+  <img src="images/health-data-icon-in-logotype-vector.jpg" width="60">
+</p>
+
+The analysis is based on MEPS datasets spanning multiple years, including 2018 through 2022. These datasets provide detailed individual-level information across several dimensions:
 
 - Demographics (age, gender, race, region)  
-- Socioeconomic status (income, employment, education)  
+- Socioeconomic attributes (income, employment, education)  
 - Healthcare utilization (expenditures, prescriptions, visits)  
 - Insurance coverage and access  
 - Health indicators (chronic conditions, general health, smoking status)  
 
-A key challenge in this project was that each year’s dataset follows slightly different schemas. As a result, a significant portion of the work focused on aligning and standardizing these datasets into a unified structure.
+A key challenge in this project was the variation in schema across different years. Column names and formats differed, requiring careful alignment and standardization to create a unified dataset suitable for analysis.
 
 
 
 ## Methodology
 
 <p align="center">
-  <img src="images/Health_Insurance_Pipeline.png" style="max-width: 350px; width: 60%; height: auto;">
+  <img src="images/Health_Insurance_Pipeline.png" style="max-width: 200px; width: 50%;">
 </p>
 
-The pipeline follows a structured sequence of steps, as shown in the diagram above.
+The pipeline follows a structured sequence of steps designed to transform raw multi-year data into a clean and interpretable dataset.
 
-The process begins with loading multiple yearly datasets and identifying corresponding variables across different schemas. Since column names vary by year, pattern-based matching and dynamic selection were used to extract consistent features.
+The process begins with loading multiple yearly datasets and identifying corresponding variables across different schemas. Pattern-based matching and dynamic column selection were used to extract consistent features despite naming differences across years.
 
-The next step involves data cleaning and filtering. Invalid values (such as placeholder codes), missing entries, and inconsistent records were handled to ensure the dataset is reliable. The analysis was restricted to a working-age population to maintain consistency across variables.
+Data cleaning and filtering were then applied to remove invalid entries, handle missing values, and ensure consistency. The analysis was restricted to a working-age population to maintain comparability across variables.
 
-After cleaning, the datasets are merged into a single unified dataset. This integrated dataset allows for cross-year comparisons and longitudinal analysis.
+Once cleaned, the datasets were merged into a single integrated dataset, enabling cross-year comparisons and longitudinal analysis.
 
-A critical step in the pipeline is categorical mapping. Many variables in MEPS are encoded numerically, which makes interpretation difficult. These values were systematically mapped to human-readable categories, improving clarity and enabling meaningful analysis.
+A critical step in the pipeline is categorical mapping. Many MEPS variables are encoded numerically, making interpretation difficult. These values were systematically converted into human-readable categories, improving interpretability and enabling meaningful analysis.
 
-Finally, exploratory analysis and visualization were performed to identify patterns, relationships, and trends across demographic and socioeconomic variables.
+Finally, exploratory analysis and visualization were conducted to identify relationships, trends, and patterns across demographic and socioeconomic factors.
 
 
 
 ## Implementation
 
-The data processing pipeline was implemented in Python with a focus on modularity and reproducibility.
+The data processing pipeline was implemented in Python with a focus on modularity, scalability, and reproducibility.
 
-Key components include:
+Key components of the implementation include:
 
-- Multi-year dataset loading and alignment  
-- Dynamic column selection using pattern matching  
+- Multi-year dataset loading and schema alignment  
+- Dynamic column extraction using pattern matching  
 - Data cleaning and filtering  
-- Categorical mapping for interpretability  
-- Dataset consolidation into a unified structure  
+- Categorical mapping for improved interpretability  
+- Consolidation into a unified dataset  
 
-The final output is a cleaned and structured dataset ready for downstream analysis:
+The final output is a cleaned and structured dataset ready for analysis:
 
 
 
 ## Results and Insights
 
+<p align="left">
+  <img src="images/user_doc.png" width="55">
+</p>
+
 The analysis reveals several consistent patterns across the dataset.
 
-Socioeconomic variables such as income and employment status show a strong relationship with healthcare expenditures. Individuals in higher income brackets tend to have greater access to healthcare services, while lower-income groups often show reduced utilization despite potential need.
+Socioeconomic variables such as income and employment status show a strong relationship with healthcare expenditures. Individuals in higher income brackets tend to have greater access to healthcare services, while lower-income groups often exhibit reduced utilization despite potential need.
 
-Insurance coverage plays a central role in determining access to care. Individuals with stable insurance coverage demonstrate higher healthcare usage and more consistent expenditure patterns compared to uninsured populations.
+Insurance coverage plays a central role in determining access to care. Individuals with stable insurance coverage demonstrate more consistent healthcare usage patterns compared to uninsured populations.
 
-Behavioral factors such as smoking status and vaccination history also show meaningful associations with health outcomes and healthcare usage.
+Behavioral factors, including smoking status and vaccination history, are also associated with differences in health outcomes and healthcare utilization.
 
-Temporal analysis across multiple years highlights changes in healthcare patterns, suggesting potential influences from policy changes, economic conditions, or external events.
+Temporal analysis across multiple years highlights shifts in healthcare patterns, suggesting the influence of broader factors such as policy changes, economic conditions, or external events.
 
-Overall, the results reinforce the importance of combining demographic, socioeconomic, and behavioral factors when analyzing healthcare systems.
+Overall, the results emphasize that healthcare outcomes cannot be analyzed in isolation and must be understood within a broader socioeconomic context.
 
 
+
+## Conclusion
+
+This project demonstrates how large-scale healthcare datasets can be integrated, cleaned, and analyzed to uncover meaningful relationships between socioeconomic factors and healthcare outcomes. By combining data engineering, feature interpretation, and exploratory analysis, the work provides a strong foundation for deeper analytical and predictive studies.
