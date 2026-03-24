@@ -1,105 +1,79 @@
-# HealthInsuranceAnalysis
-Exploring Determinants of Healthcare Expenditures and Outcomes Using Statistical Analysis 
+# Health Insurance and Socioeconomic Data Analysis
 
-# Data Processing and Visualization Project
+<p align="center">
+  <img src="images/Health_Insurance_Pipeline.png" width="850">
+</p>
 
 ## Overview
-This project focuses on processing and analyzing healthcare-related data using Python. The workflow involves cleaning and transforming raw datasets, mapping codes to meaningful labels, and performing visualizations to extract insights and test hypotheses.
 
-## Files in This Repository
+This project analyzes large-scale healthcare data to understand how socioeconomic and demographic factors influence healthcare utilization, costs, and outcomes. Using multi-year data from the Medical Expenditure Panel Survey (MEPS), the goal is to uncover meaningful patterns that explain differences in healthcare access and expenditure across populations.
 
-1. **`preprocessingCode.py`**
-   - **Purpose**: Processes raw datasets from multiple years into a cleaned and unified format.
-   - **Features**:
-     - Combines multiple datasets.
-     - Maps raw codes (e.g., gender, employment status) to human-readable labels.
-     - Filters for relevant data (ages 18-64) and removes invalid values.
-     - Outputs a combined CSV file: `combined_meps_data_new.csv`.
+Rather than focusing only on data processing, the project is structured around answering a central question:
 
-2. **`mapping.py`**
-   - **Purpose**: Contains dictionaries to map coded values to descriptive labels.
-   - **Features**:
-     - Maps columns such as gender, health status, region, and more.
-     - Example mappings:
-       - `1 → "Male", 2 → "Female"` (Gender)
-       -  1 → "Employed"`, `34 → "Unemployed" (Employment Status)
-   - Designed to be imported and used during preprocessing or analysis.
+**How do income levels, age, gender, and insurance coverage impact healthcare costs and health outcomes?**
 
-3. **`dataViz.ipynb`**
-   - **Purpose**: Jupyter Notebook for visualizing the processed data.
-   - **Features**:
-     - Generates plots to explore healthcare expenditures, regional trends, and demographic distributions.
-     - Supports hypothesis testing using statistical methods.
-
-4. **`visualizationAndHypothesisCode.ipynb`**
-   - **Purpose**: Combines visualization and hypothesis testing for data insights.
-   - **Features**:
-     - Includes detailed visualizations for exploring data relationships.
-     - Tests hypotheses such as differences in healthcare expenditures by region or vaccination status.
-     - 
-
-## Installation and Requirements
-
-### Prerequisites
-- Python 3.x
-- Required Libraries:
-  - `pandas`
-  - `numpy`
-  - `matplotlib`
-  - `seaborn`
-  - `scipy`
-
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/meghnanag2/HealthInsuranceAnalysis.git
-   ```
-2. Install required Python packages:
-   ```bash
-   pip install pandas numpy matplotlib seaborn scipy
-   ```
-
-## Usage
-
-1. **Preprocessing Data**:
-   - Run `preprocessingCode.py` to process raw CSV files and generate a cleaned dataset:
-     ```bash
-     python preprocessingCode.py
-     ```
-   - Output: `combined_meps_data_new.csv`
-
-2. **Mapping**:
-   - Use `mapping.py` to convert raw codes into readable labels during data analysis.
-
-3. **Visualization and Hypothesis**:
-   - Open `dataViz.ipynb` or `visualizationAndHypothesisCode.ipynb` in Jupyter Notebook.
-   - Execute the cells to generate plots and test hypotheses.
+The work combines multi-year data integration, structured preprocessing, categorical mapping, and exploratory analysis to build a clean and interpretable dataset for analysis.
 
 
-## Sample Workflow
 
-1. Preprocess raw data:
-   - Combine data from 2018-2022.
-   - Filter and clean it.
-2. Map codes to labels using `mapping.py`.
-3. Analyze data in Jupyter Notebooks:
-   - Generate visualizations.
-   - Test statistical hypotheses.
+## Data
 
-## Contributions
+The analysis is based on MEPS datasets spanning multiple years, including 2018 through 2022. These datasets contain detailed individual-level information across several dimensions:
 
-This project was collaboratively developed by the following contributors:
+- Demographics (age, gender, race, region)  
+- Socioeconomic status (income, employment, education)  
+- Healthcare utilization (expenditures, prescriptions, visits)  
+- Insurance coverage and access  
+- Health indicators (chronic conditions, general health, smoking status)  
 
-Madhumitha Somasundaram
-College of Engineering and Applied Science, Boulder, Colorado, USA
-Madhumitha.Somasundaram@colorado.edu
+A key challenge in this project was that each year’s dataset follows slightly different schemas. As a result, a significant portion of the work focused on aligning and standardizing these datasets into a unified structure.
 
-Meghna Nag
-College of Engineering and Applied Science, Boulder, Colorado, USA
-Meghna.Nag@colorado.edu
 
-Sathish Kumar Prabaharan
-College of Engineering and Applied Science, Boulder, Colorado, USA
-Sathishkumar.Prabaharan@colorado.edu
+
+## Methodology
+
+The pipeline follows a structured sequence of steps, as shown in the diagram above.
+
+The process begins with loading multiple yearly datasets and identifying corresponding variables across different schemas. Since column names vary by year, pattern-based matching and dynamic selection were used to extract consistent features.
+
+The next step involves data cleaning and filtering. Invalid values (such as placeholder codes), missing entries, and inconsistent records were handled to ensure the dataset is reliable. The analysis was restricted to a working-age population to maintain consistency across variables.
+
+After cleaning, the datasets are merged into a single unified dataset. This integrated dataset allows for cross-year comparisons and longitudinal analysis.
+
+A critical step in the pipeline is categorical mapping. Many variables in MEPS are encoded numerically, which makes interpretation difficult. These values were systematically mapped to human-readable categories, improving clarity and enabling meaningful analysis.
+
+Finally, exploratory analysis and visualization were performed to identify patterns, relationships, and trends across demographic and socioeconomic variables.
+
+
+
+## Implementation
+
+The data processing pipeline was implemented in Python with a focus on modularity and reproducibility.
+
+Key components include:
+
+- Multi-year dataset loading and alignment  
+- Dynamic column selection using pattern matching  
+- Data cleaning and filtering  
+- Categorical mapping for interpretability  
+- Dataset consolidation into a unified structure  
+
+The final output is a cleaned and structured dataset ready for downstream analysis:
+
+
+
+## Results and Insights
+
+The analysis reveals several consistent patterns across the dataset.
+
+Socioeconomic variables such as income and employment status show a strong relationship with healthcare expenditures. Individuals in higher income brackets tend to have greater access to healthcare services, while lower-income groups often show reduced utilization despite potential need.
+
+Insurance coverage plays a central role in determining access to care. Individuals with stable insurance coverage demonstrate higher healthcare usage and more consistent expenditure patterns compared to uninsured populations.
+
+Behavioral factors such as smoking status and vaccination history also show meaningful associations with health outcomes and healthcare usage.
+
+Temporal analysis across multiple years highlights changes in healthcare patterns, suggesting potential influences from policy changes, economic conditions, or external events.
+
+Overall, the results reinforce the importance of combining demographic, socioeconomic, and behavioral factors when analyzing healthcare systems.
+
 
