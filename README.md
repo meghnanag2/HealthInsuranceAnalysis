@@ -1,8 +1,5 @@
 # Health Insurance and Socioeconomic Data Analysis
 
-<p align="center">
-  <img src="images/Health_Insurance_Pipeline.png" width="850">
-</p>
 
 ## Overview
 
@@ -31,6 +28,10 @@ A key challenge in this project was that each year’s dataset follows slightly 
 
 
 ## Methodology
+
+<p align="center">
+  <img src="images/Health_Insurance_Pipeline.png" style="max-width: 350px; width: 60%; height: auto;">
+</p>
 
 The pipeline follows a structured sequence of steps, as shown in the diagram above.
 
